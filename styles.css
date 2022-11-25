@@ -1,0 +1,120 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  text-align: center;
+  color: rgb(20, 230, 27);
+  font-size: 50px;
+  padding: 10px;
+}
+ body {
+  background-color: rgb(14, 14, 28);
+  color: white;
+  /* text-align: center; */
+ }  
+
+ p {
+  font-size: 30px;
+ }
+
+.red {
+  color: red;
+}
+ 
+#word {
+  text-align: center;
+}
+.errorCero {
+  text-align: center;
+  margin: 20px;
+  color: rgb(20, 230, 27);
+}
+
+#errorB {
+  color: red;
+  text-align: center;
+  margin: 20px;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+}
+.ref {
+  width: 100%;
+  margin-bottom: 2em;
+}
+
+.ref button {
+  border: none;
+  background: 0;
+  
+  display: block;
+  padding: 1em 0;
+  width: 180px;
+  background-color: yellow;
+  /* box-shadow: 0 1px 5px rgba(248, 248, 248, 0.904); */
+  border-radius: 1em;
+  margin: auto;
+  font-size: 1.5em;
+}
+
+.border-boton span {
+  padding: 0 0.5em;
+  font-size: 2rem;
+  margin-right: 1em; 
+  border-bottom: 5px solid yellow;
+  color: white;
+}
+
+.border-boton span:last-child {
+  margin-right: 0;
+}
+
+.contenPError {
+  display: flex;
+  justify-content: center; 
+}
+
+.contenPError > p {
+  font-size: 2.5em;
+  color: red;
+  padding-bottom: 30px;
+}
+
+.container-son > .h2good {
+  color: rgb(9, 239, 9);
+  font-size: 5em;
+  margin-bottom: 30px;
+  display: inline-block;
+}
+.container-son > .h2bad {
+  display: inline-block;
+  color: red;
+  font-size: 5em;
+  margin-bottom: 30px;
+}
+
+.container-son > #h2bad {
+  display: inline-block;
+  color: red;
+  font-size: 5em;
+  margin-bottom: 30px;
+}
+
+#gameOver > h2 {
+  font-size: 6em;
+  color: red;
+}
+
+#container-winner > h2 {
+  color: rgb(9, 239, 9);
+  font-size: 6em;
+}
