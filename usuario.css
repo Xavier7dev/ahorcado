@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+ --bad: #ff0000; 
+ --win: #14e61b;
+ --fondo: #0e0e1c;
+ --user: #787a7d;
+}
+
+#container-input-user {
+  display: flex;
+  flex-direction: row-reverse;
+  /* border: 1px solid var(--win); */
+  justify-content: space-around;
+  position: relative;
+  bottom: 40vh;
+  height: 50px;
+  width: 300px;
+  align-items: center;
+  right: 35vw;
+}
+
+#container-input-user > input {
+  bottom: 12px;
+  width: 200px;
+  height: 40px;
+  background: var(--fondo);
+  font-size: 1.8em;
+  text-align: center;
+  border: 1px solid var(--win);
+  color: var(--win);
+}
+
+#container-input-user > p {
+  /* font-size: 100em; */
+  color: yellow;
+}
+
+#container-userEstatic {
+  position: relative;
+  /* border: 1px solid blue; */
+  bottom: 200px;
+  height: 50px;
+  /* display: flex; */
+}
+
+#container-userEstatic > p {
+  font-size: 2.5em;
+  color: var(--user);
+}
+
+/* comienza mq */
+@media (max-width: 1024px) {
+  body {
+    /* background: red; */
+  }
+  #container-input-user {
+    bottom: 300px;
+    left: 10px;
+  }
+  #container-userEstatic > p {
+    /* font-size: 3em; */
+  }
+  #container-userEstatic {
+    /* left: 0px; */
+    /* bottom: 800px; */
+  }
+  
+}
+
+@media (max-width: 768px) {
+  body {
+    /* background: yellow; */
+  }
+  #container-input-user {
+    bottom: 250px;
+    left: 0px;
+  }
+  #container-userEstatic > p {
+    font-size: 3em;
+  }
+  #container-userEstatic {
+    left: 0px;
+    bottom: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    /* background: white; */
+  }
+  #container-input-user {
+    bottom: 250px;
+    left: 0px;
+  }
+
+  #container-userEstatic > p {
+    font-size: 3em;
+    bottom: 350px;
+    right: 80px;
+  }
+  #container-userEstatic {
+    left: 0px;
+    bottom: 200px;
+  }
+}
+
+@media (max-width: 360px) {
+  body {
+    /* background: blue; */
+  }
+  #container-input-user {
+    bottom: 200px;
+    left: 0px;
+  }
+  #container-userEstatic > p {
+    /* font-size: 2em;
+    bottom: 10px;
+    right: 250px; */
+  }
+  #container-userEstatic {
+    font-size: 0.8em;
+    left: 0px;
+    bottom: 180px;
+  }
+}
+
+@media (max-width: 320px) {
+  body {
+    /* background: blue; */
+  }
+  #container-input-user {
+    left: 0px;
+  }
+  #container-userEstatic {
+    left: 0px;
+  }
+}

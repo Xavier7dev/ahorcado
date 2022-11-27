@@ -4,6 +4,13 @@
   box-sizing: border-box;
 }
 
+:root {
+  --bad: #ff0000; 
+  --win: #14e61b;
+  --fondo: #0e0e1c;
+  --user: #787a7d;
+ }
+
 h1 {
   text-align: center;
   color: rgb(20, 230, 27);
@@ -26,17 +33,6 @@ h1 {
  
 #word {
   text-align: center;
-}
-.errorCero {
-  text-align: center;
-  margin: 20px;
-  color: rgb(20, 230, 27);
-}
-
-#errorB {
-  color: red;
-  text-align: center;
-  margin: 20px;
 }
 
 .container {
@@ -81,32 +77,35 @@ h1 {
 .contenPError {
   display: flex;
   justify-content: center; 
+  /* position: relative; */
 }
 
 .contenPError > p {
   font-size: 2.5em;
   color: red;
-  padding-bottom: 30px;
+  /* padding-bottom: 30px; */
+  position: relative;
+  bottom: 35px;
 }
 
 .container-son > .h2good {
   color: rgb(9, 239, 9);
   font-size: 5em;
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
   display: inline-block;
 }
 .container-son > .h2bad {
   display: inline-block;
   color: red;
   font-size: 5em;
-  margin-bottom: 30px;
+  /* bottom: 400px; */
 }
 
 .container-son > #h2bad {
   display: inline-block;
   color: red;
   font-size: 5em;
-  margin-bottom: 30px;
+  /* bottom: 400px; */
 }
 
 #gameOver > h2 {
@@ -117,4 +116,65 @@ h1 {
 #container-winner > h2 {
   color: rgb(9, 239, 9);
   font-size: 6em;
+}
+
+.border-boton > #span-space {
+
+  border-bottom: 5px solid var(--fondo);
+}
+
+.border-boton > .teclaYaIncluidaAviso {
+  color: var(--win);
+  font-size: 2.5em;
+}
+
+@media (max-width: 480px) {
+  body {
+    /* background: white; */
+  }
+  .container-son > .h2good {
+    font-size: 4em;
+  }
+  .container-son > .h2bad {
+    font-size: 4em;
+  }
+  .border-boton span {
+    /* padding: 0 0.5em; */
+    font-size: 1.5rem;
+    margin-right: 1em; 
+    border-bottom: 5px solid yellow;
+    color: white;
+  }
+ 
+}
+@media (max-width: 360px) {
+  .container-son > .h2good {
+    font-size: 3em;
+  }
+  .border-boton span {
+   font-size: 1.2em;
+  }
+  .container-son > .h2bad {
+    font-size: 3em;
+  }
+  #container-winner > h2 {
+    font-size: 4em;
+  }
+  #gameOver > h2 {
+    font-size: 3em;
+  }  
+}
+
+@media (max-width: 320px) {
+  body {
+    /* background: blue; */
+  }
+  .container-son > .h2good {
+    font-size: 3em;
+  }
+
+  .border-boton span {
+    font-size: 0.7rem;
+    margin-right: 1em; 
+  }
 }

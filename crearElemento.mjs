@@ -60,19 +60,27 @@ export function ahorcadosH2good() {
 export function borderButton() {
   const {words, ref} = variable;
   const div = document.createElement("div");
-  const random = words[(Math.floor(Math.random() * words.length +1)) -1]
+  const random = words[(Math.floor(Math.random() * words.length +1)) -1].toUpperCase()
   div.classList.add("border-boton")
   
   for (let i = 0; i < random.length; i++) {
-    const span = document.createElement("span");
-    span.textContent = "";
-    
-    div.appendChild(span);
-    ref.insertAdjacentElement("afterend", div); 
+    if (random[i] !== " ") {
+      const span = document.createElement("span");
+      span.textContent = "";
+      div.appendChild(span);
+      ref.insertAdjacentElement("afterend", div); 
+    }
+    else {
+      const span = document.createElement("span");
+      span.textContent = "";
+      span.id = "span-space"
+      div.appendChild(span);
+      ref.insertAdjacentElement("afterend", div);  
+    }
   }
   
   variable.elementSpan = [...document.querySelectorAll(".border-boton > span")]
-  variable.wordRandom = random;
+  variable.wordRandom = random.toUpperCase();
 
   variable.containerBorderBtn = document.querySelector(".container > .border-boton" )
 }
@@ -81,8 +89,8 @@ export function getCharKeyword(e) {
   const {wordRandom, elementSpan} = variable;
 
   for (let i = 0; i < wordRandom.length; i++) {
-    if (e.key === wordRandom[i]) {
-      elementSpan[i].innerHTML = e.key
+    if (e.key.toUpperCase() === wordRandom[i]) {
+      elementSpan[i].innerHTML = e.key.toUpperCase()
     }
   }
 }
@@ -92,7 +100,7 @@ export function getCharKeywordBad(e) {
   
   if (!listaAuxBad.includes(e.key)) {
     listaAuxBad.push(e.key)
-    elementoPError.textContent = `${listaAuxBad.join(" ")}`
+    elementoPError.textContent = `${listaAuxBad.join(" ").toUpperCase()}`
   }
 }
 
@@ -133,11 +141,9 @@ export function ahorcadoReaction() {
   variable.strinGood = strinGood;
 }
 
-
 export function removeLinePerror() {
   const {container, containerBorderBtn, containerPError} = variable;
   
-  // container.removeChild(containerPError);--- 
   container.removeChild(containerBorderBtn);
   container.removeChild(containerPError); 
 }
@@ -180,13 +186,15 @@ export function winner() {
     if (count >= i && elementSpan[i].textContent !== "") {
       count++;
     }
+    if (elementSpan[i].id === "span-space") {
+      count++;
+    }
   }
 
   if (count === elementSpan.length) {
     return "winner"
   }
   
-  //ahorcado de color verde
 }
 
 export function addh2winner() {
@@ -204,13 +212,11 @@ export function addh2winner() {
   variable.containerWinner = document.querySelector(".container > #container-winner")
 }
 
-
 export function removeH2Winner() {
   const {container, containerWinner} = variable;
 
   container.removeChild(containerWinner)
 }
-
 
 export function convertirH2Good() {
   const {elementosh2} = variable;
@@ -225,7 +231,33 @@ export function convertirH2Good() {
   });
 }
 
-//quitar elem win
-// export function removeh2win() {
+//si comienza el juego, no debe poder reiniciar, reiniciar solo para
+//espacio solo dejarlo así;
 
-// }
+
+//stop reinicio, se esta jugando, salvo se pierda o se siga ganando poner un modo
+export function stopReiniciar() {
+  variable.stopReiniciar = "stop";
+}
+
+//resalta tecla incluida con color verde y probar si agrandar tamaño
+export function teclaYaIncluidaAviso(e) {
+  const {elementSpan} = variable;
+
+  elementSpan.map((elem) => {
+    let existe = "";
+    if (e.key.toUpperCase() === elem.textContent) {
+      console.log("entro");
+      existe = elem.className = "teclaYaIncluidaAviso"
+    }
+    else {
+      existe = elem.className = null;
+    };
+    // console.log(elem.textContent, e.key.toUpperCase())
+  });
+}
+
+//resalta tecla incluida error con color red en listaAuxBad
+export function teclaYaIncluidaAvisoError() {
+  console.log(variable.listaAuxBad, " list bad");
+}
