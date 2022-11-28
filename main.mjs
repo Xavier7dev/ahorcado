@@ -38,14 +38,20 @@ document.addEventListener("DOMContentLoaded", () => {
   createInputUser();
   //crea usuario random Ahorcado del 1 a 100;
   createUserRandom(); 
+
+  
+  
   variable.elementBtn.addEventListener("click", () =>  {
+
+    //add 1 pero ya estaba
+    //da paso al evento keypress
+    variable.inicio = "on"
+    
     const {h2good_animation} = variable;
     //end h2good animation
     if (h2good_animation.className === "h2good-animation") {
       ahorcadosH2good_end_animation();
     }
-    //da paso al evento keypress
-    variable.inicio = "on"
     if (variable.stopReinicia !== "Stop Reiniciar") {
       const {elementosh2} = variable
       //save user luego del click
@@ -96,7 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
   //TECLADO
   document.addEventListener("keypress", (e) => {
     if (variable.inicio === "on") {
-      const {wordRandom, listaAuxBad, containerPError_pAll, trueTeclaAvisoError} = variable;
+      const {wordRandom, listaAuxBad} = variable;
       if (variable.teclado === "activado") { 
         if (e.key !== "Enter" && e.key !== " ") {
           variable.stopReinicia = "Stop Reiniciar";

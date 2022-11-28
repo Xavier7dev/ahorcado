@@ -13,16 +13,11 @@
 }
 
 #container-input-user {
-  display: flex;
+  flex: 1;
+  display: inline-flex;
   flex-direction: row-reverse;
-  /* border: 1px solid var(--win); */
-  justify-content: space-around;
-  position: relative;
-  bottom: 40vh;
-  height: 50px;
-  width: 300px;
+  justify-content: center;
   align-items: center;
-  right: 35vw;
 }
 
 #container-input-user > input {
@@ -32,12 +27,13 @@
   background: var(--fondo);
   font-size: 1.8em;
   text-align: center;
-  border: 1px solid var(--win);
-  color: var(--win);
+  color: var(--user2);
 }
 
 #container-input-user > p {
   color: yellow;
+  padding: 10px;
+  font-size: 30px;
 }
 
 #container-userEstatic {
@@ -47,25 +43,16 @@
 }
 
 #container-userEstatic > p {
-  font-size: 3em;
-  /* color: var(--user); */
   color: #0954c6;
+  font: bold 2em cursive;
 }
 
 /* comienza mq */
 @media (max-width: 1024px) {
-  #container-input-user {
-    bottom: 300px;
-    left: 10px;
-  }
   
 }
 
 @media (max-width: 768px) {
-  #container-input-user {
-    bottom: 200px;
-    left: 0px;
-  }
   #container-userEstatic > p {
     font-size: 3em;
   }
@@ -76,10 +63,6 @@
 }
 
 @media (max-width: 480px) {
-  #container-input-user {
-    bottom: 250px;
-    left: 0px;
-  }
 
   #container-userEstatic > p {
     font-size: 3em;
@@ -93,10 +76,6 @@
 }
 
 @media (max-width: 360px) {
-  #container-input-user {
-    bottom: 200px;
-    left: 0px;
-  }
   #container-userEstatic {
     font-size: 0.8em;
     left: 0px;
@@ -105,10 +84,6 @@
 }
 
 @media (max-width: 320px) {
-  #container-input-user {
-    left: 0px;
-    bottom: 150px;
-  }
   #container-userEstatic {
     left: 0px;
   }
