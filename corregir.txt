@@ -1,1 +1,1 @@
-*solucionar el tema de presionar la misma tecla no levanta relieve
+*solucionar el tema de los enters

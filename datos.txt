@@ -6,3 +6,4 @@
 -volver a nivel cero si se pierde
 -cuando se pierde mostrar en un cuadro su mejor avance y tiempo de duración, ranking 
 de los users que hubo antes de actualizar(se pierde los datos- tocar aprender backend)
+-efecto cuando se pulsa teclado incremento de tamaño

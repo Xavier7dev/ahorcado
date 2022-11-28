@@ -15,14 +15,9 @@ import {
   addh2winner,
   convertirH2Good,
   removeH2Winner,
-  teclaYaIncluidaAviso,
-  teclaYaIncluidaAvisoError,
   ahorcadosH2good_animation,
   ahorcadosH2good_end_animation,
-  removeCreateElementBad,
-  removeAvisoCorrect,
-  removeAvisoError,
-  removeAvisoError2
+  removeCreateElementBad
 } from "./crearElemento.mjs";
 
 import { 
@@ -35,26 +30,20 @@ import {
 
 document.addEventListener("DOMContentLoaded", () => {
   ahorcadosH2good();
-  
   //start animation h2 good
   ahorcadosH2good_animation();
-  
   ahorcadosH2bad();
   crearElemento();
-  
   //crear input usuario
   createInputUser();
   //crea usuario random Ahorcado del 1 a 100;
-  createUserRandom();
-  
+  createUserRandom(); 
   variable.elementBtn.addEventListener("click", () =>  {
     const {h2good_animation} = variable;
-
     //end h2good animation
     if (h2good_animation.className === "h2good-animation") {
       ahorcadosH2good_end_animation();
     }
-
     //da paso al evento keypress
     variable.inicio = "on"
     if (variable.stopReinicia !== "Stop Reiniciar") {
@@ -65,24 +54,18 @@ document.addEventListener("DOMContentLoaded", () => {
       if (variable.containerInputUser ) {
         removeInputUser()
       }
-  
       //agregar elem p con nombre de usuario en la parte izquierda superior de la pag nameUserStatic play
       if (variable.addNameUserEstatic !== "on") {
         addNameUserEstatic();
         variable.addNameUserEstatic = "on";
       }
-      
       //guarda name de user en un array si es nombre real o solo coloca el usuario Ahorcado random;
-      
       if (variable.containerBorderBtn && variable.teclado === "activado") {
-        
         convertirH2Good();
-        
         removeCreateElementBad();
         removeLineIntermitentes();
         borderButton();
         crearElementoBad();
-        
       }
       if (!variable.containerBorderBtn) {
         elementosh2[0].textContent = "AHORCADO";
@@ -90,7 +73,6 @@ document.addEventListener("DOMContentLoaded", () => {
         borderButton();
         crearElementoBad();
       }
-      
       if (variable.teclado === "game over") { 
         reinicioGameOver();
         borderButton();
@@ -109,32 +91,17 @@ document.addEventListener("DOMContentLoaded", () => {
         //reiniciar juego
         //cambiar teclado activado
       }
-      
     }
-    
   });
   //TECLADO
   document.addEventListener("keypress", (e) => {
-    // (e.key === " ") ? console.log("espacio") : console.log("no es espacio");
     if (variable.inicio === "on") {
-      const {wordRandom, listaAuxBad, containerPError_pAll} = variable;
-      //variable modo stop reiniciar, salvo se jugue o se pierda antes de hacer click
+      const {wordRandom, listaAuxBad, containerPError_pAll, trueTeclaAvisoError} = variable;
       if (variable.teclado === "activado") { 
-        
         if (e.key !== "Enter" && e.key !== " ") {
           variable.stopReinicia = "Stop Reiniciar";
           if (wordRandom.includes(e.key.toUpperCase())) {          
-            //resalta tecla incluida con color verde y probar si agrandar tamaño
-            //here
-            teclaYaIncluidaAviso(e);
-
-            //remover avisor de error tecla incluida
-            
             getCharKeyword(e)
-            if (containerPError_pAll) {
-              removeAvisoError();
-            }
-
             if (winner() === "winner") {
               variable.teclado = "win";
               convertirH2Good();
@@ -144,27 +111,12 @@ document.addEventListener("DOMContentLoaded", () => {
               variable.stopReinicia = "off";
             }
           }
-
           else {
-            removeAvisoCorrect();
-            
-            //remover mismo avisoIncorrecto
-          
             if (!variable.listaAuxBad.includes(e.key)) {
               removeCreateElementBad();
             }
-            if (variable.listaAuxBad.includes(e.key)) {
-              // removeCreateElementBad();
-              teclaYaIncluidaAvisoError(e);
-              removeAvisoCorrect();
-            }
-            if (containerPError_pAll) {
-              removeAvisoError2();
-            }
             getCharKeywordBad(e);
-            
             ahorcadoReaction(); 
-   
             if (variable.listaAuxBad.length === 8) {
               console.log("game over")
               variable.teclado = "game over";
@@ -172,14 +124,11 @@ document.addEventListener("DOMContentLoaded", () => {
               removeCreateElementBad();
               gameOver();
               variable.stopReinicia = "off";  
-              
             }
           }
-
         }
       }
     }
-
   });
 });
 

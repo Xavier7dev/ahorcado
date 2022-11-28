@@ -13,9 +13,7 @@ export function crearElemento() {
 
   variable.elementDivBtn = document.querySelector("#contentBtn");
   variable.elementBtn = document.querySelector("#contentBtn > button")
-  
   variable.container = document.querySelector(".container")
-
   variable.elementosh2 = [...document.querySelectorAll(".container-son > h2")]
 }
 
@@ -23,9 +21,9 @@ export function crearElementoBad() {
   //8 span words error
   const {ref} = variable;
 
+  const auxBad = [];
   const div = document.createElement("div");
   div.classList.add("contenPError")
-  
   const pError = document.createElement("p")
   pError.textContent = ``;
   
@@ -33,13 +31,7 @@ export function crearElementoBad() {
   ref.insertAdjacentElement("beforebegin", div); 
   
   variable.elementoPError = document.querySelector(".contenPError > p")
-  
-  const auxBad = [];
   variable.listaAuxBad = auxBad;
-
-  // variable.containerPError = document.querySelector(".container > .contenPError") 
-  // variable.containerPError = document.querySelector(".contenPError") 
-  // variable.containerPError_pAll = [...document.querySelectorAll(".contenPError > p")]
 }
 
 export function ahorcadosH2good() {
@@ -51,12 +43,10 @@ export function ahorcadosH2good() {
   h2good.textContent = "AHORCADO"
   h2good.className = "h2good"
   
-  
   div.appendChild(h2good)
   ref.insertAdjacentElement("beforebegin" , div);
 
   variable.elementoh2 = document.querySelector(".container-son")
-
   variable.containerContainerSon = document.querySelector(".container > .container-son")
 }
 
@@ -92,7 +82,6 @@ export function borderButton() {
       ref.insertAdjacentElement("afterend", div);  
     }
   }
-  
   variable.elementSpan = [...document.querySelectorAll(".border-boton > span")]
   variable.wordRandom = random.toUpperCase();
 
@@ -109,15 +98,6 @@ export function getCharKeyword(e) {
   }
 }
 
-// export function getCharKeywordBad(e) {
-//   const {elementoPError, listaAuxBad, containerPError_pAll} = variable;
-  
-//   if (!listaAuxBad.includes(e.key)) {
-//     listaAuxBad.push(e.key)
-//     elementoPError.textContent = `${listaAuxBad.join(" ").toUpperCase()}`
-//   }
-//   // modificar colocar lista de span error
-// }
 export function removeCreateElementBad() {
   const {container} = variable;
   
@@ -134,15 +114,14 @@ export function getCharKeywordBad(e) {
   if (!listaAuxBad.includes(e.key)) {
     listaAuxBad.push(e.key)
     for (let i = 0; i < listaAuxBad.length; i++) {
-      
       const pError = document.createElement("p")
       pError.textContent = `${listaAuxBad[i].toUpperCase()}`;
       
       div.appendChild(pError);
       ref.insertAdjacentElement("beforebegin", div); 
-
     }
   }
+  
   variable.elementoPError = document.querySelector(".contenPError > p")
   variable.containerPError_pAll = [...document.querySelectorAll(".contenPError > p")]
 }
@@ -163,7 +142,6 @@ export function ahorcadoReaction() {
   let ahorcado = "AHORCADO"
   let strinGood = "";
   let stringBad = "";
-
   for (let i = 0; i < ahorcado.length; i++) {
     if (i <listaAuxBad.length) {
       strinGood += ahorcado[i];
@@ -189,7 +167,6 @@ export function removeLineIntermitentes() {
   
   container.removeChild(containerBorderBtn);
 }
-
 
 export function gameOver() {
   const {container, containerBorderBtn, containerPError} = variable;
@@ -223,7 +200,6 @@ export function winner() {
   //obtener etiquetas p si el texto coincide con wordRandom es win
 
   let count = 0;
-
   for (let i = 0; i < elementSpan.length; i++) {
     if (count >= i && elementSpan[i].textContent !== "") {
       count++;
@@ -232,11 +208,9 @@ export function winner() {
       count++;
     }
   }
-
   if (count === elementSpan.length) {
     return "winner"
   }
-  
 }
 
 export function addh2winner() {
@@ -275,66 +249,7 @@ export function convertirH2Good() {
 
 //si comienza el juego, no debe poder reiniciar, reiniciar solo para
 //espacio solo dejarlo así;
-
-
 //stop reinicio, se esta jugando, salvo se pierda o se siga ganando poner un modo
 export function stopReiniciar() {
   variable.stopReiniciar = "stop";
-}
-
-//resalta tecla incluida con color verde y probar si agrandar tamaño
-export function teclaYaIncluidaAviso(e) {
-  const {elementSpan} = variable;
-
-  let existe = "";
-  elementSpan.map((elem) => {
-    if (e.key.toUpperCase() === elem.textContent) {
-      existe = elem.className = "teclaYaIncluidaAviso"
-    }
-    else {
-      existe = elem.className = null;
-    };
-    // console.log(elem.textContent, e.key.toUpperCase())
-  });
-}
-
-//resalta tecla incluida error con color red en listaAuxBad
-export function teclaYaIncluidaAvisoError(e) {
-  const {containerPError_pAll} = variable;
-  
-  containerPError_pAll.map((elem) => {
-    if (elem.textContent === e.key.toUpperCase()) {
-      elem.className = "teclaYaIncluidaAvisoError"
-      // console.log(elem.textContent,"paso 1");
-    }
-    else { 
-      elem.className = "";
-      // console.log("paso 2");
-    }
-  })
-}
-
-export function removeAvisoError() {
-  const {containerPError_pAll, listaAuxBad} = variable;
-  
-  containerPError_pAll.map((elem) => {
-    elem.className = ""
-  })
-  // console.log(listaAuxBad[listaAuxBad.length-1], "here");
-}
-export function removeAvisoError2() {
-  const {containerPError_pAll, listaAuxBad} = variable;
-  
-  for (let i = 0; i < containerPError_pAll.length; i++) {
-    containerPError_pAll[i].className;
-    console.error(containerPError_pAll[i].className, "tecla repeticua");
-  }
-}
-
-export function removeAvisoCorrect() {
-  const {elementSpan} = variable;
-  
-  elementSpan.map((elem) => {
-    elem.className = ""
-  })
 }

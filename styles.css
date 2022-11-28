@@ -11,30 +11,13 @@
   --user: #787a7d;
  }
 
-h1 {
-  text-align: center;
-  color: rgb(20, 230, 27);
-  font-size: 50px;
-  padding: 10px;
-  
-}
-
 body {
   background-color: rgb(14, 14, 28);
   color: white;
-  /* text-align: center; */
 }  
 
- p {
+#container-input-user > p {
   font-size: 30px;
- }
-
-.red {
-  color: red;
-}
-
-#word {
-  text-align: center;
 }
 
 .container {
@@ -97,10 +80,6 @@ body {
   display: inline-block;
   transition: transform 1s ease-in-out 0s;
 }
-/* .container-son > .h2good:hover {
- 
-  transform: rotate(5deg);
-} */
 
 .container-son > .h2good-animation {
   color: rgb(9, 239, 9);
@@ -108,7 +87,6 @@ body {
   display: inline-block;
   animation: mianimacion 2s ease-in-out 2s infinite normal none;
 }
-
 
 @keyframes mianimacion {
   0% {
@@ -138,14 +116,12 @@ body {
   display: inline-block;
   color: red;
   font-size: 5em;
-  /* bottom: 400px; */
 }
 
 .container-son > #h2bad {
   display: inline-block;
   color: red;
   font-size: 5em;
-  /* bottom: 400px; */
 }
 
 #gameOver > h2 {
@@ -159,62 +135,8 @@ body {
 }
 
 .border-boton > #span-space {
-
   border-bottom: 5px solid var(--fondo);
 }
-
-.border-boton > .teclaYaIncluidaAviso {
-  /* color: var(--win); */
-  color: white;
-  /* font-size: 2em; */
-  animation: avisoteclaYaIncluida 0.5s ease-in-out 0s normal none;
-}
-
-@keyframes avisoteclaYaIncluida {
-  0% {
-  color: var(--win);
-  font-size: 2.2em;
-}
-50% {
-  color: var(--win);
-  font-size: 2.5em;
-  }
-75% {
-  color: var(--win);
-  font-size: 2.2em;
-  }
-100% {
-  font-size: 2em;
-  color: white;
-  }
-}
-
-.contenPError > .teclaYaIncluidaAvisoError {
-  color: var(--bad);
-  font-size: 2em;
-  animation: avisoError 0.5s ease-in-out 0s normal none;
-}
-
-@keyframes avisoError {
-  0% {
-  color: rgb(137, 46, 125);
-  font-size: 2.5em;
-}
-50% {
-  color: rgb(174, 4, 212);
-  font-size: 3em;
-  }
-75% {
-  color: rgb(137, 46, 125);
-  font-size: 2.5em;
-  }
-100% {
-  color: rgb(223, 21, 21);
-  font-size: 2em;
-  }
-}
-
-
 
 @media (max-width: 480px) {
   .container-son > .h2good {

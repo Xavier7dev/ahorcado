@@ -22,7 +22,6 @@ export function createUserRandom() {
 
   const numRandom = Math.floor(Math.random() * 100+1)
   let userAhorcado;
-
   if (numRandom < 10) {
     userAhorcado = `00${numRandom}`
   }
@@ -31,16 +30,13 @@ export function createUserRandom() {
       userAhorcado = `0${numRandom}`
     }
   }
-
   containerInputUser.placeholder = `Ahorcado${userAhorcado}`
 }
-
 
 export function saveUser() {
   const {containerInputUser} = variable;
   
   let user;
-  
   if (containerInputUser.value !== "") {
     user = containerInputUser.value;
     variable.saveUser = user;
@@ -48,29 +44,9 @@ export function saveUser() {
   else {
     user = containerInputUser.placeholder
   }
-      
   variable.user = user
-
   //en un fúturo agregar una condicional si esta dentro del array el jugador
 }
-
-  //probar incrustando una imagen
-// export function addImg() {
-//   const {ref} = variable;
-
-//   const div = document.createElement("div");
-//   div.id = "container-img"
-//   const img = document.createElement("img")
-//   // img.placeholder = "Ahorcado001"
-//   // const p = document.createElement("p")
-//   // p.textContent = "name"
-  
-//   div.appendChild(img)
-//   // div.appendChild(p)
-//   ref.insertAdjacentElement("beforebegin", div);
-
-//   console.log(document.querySelector("#container-img > img").src = "./spartan.png");
-// }
 
 //eliminar input user
 export function removeInputUser() {  
@@ -94,4 +70,3 @@ export function addNameUserEstatic() {
   ref.insertAdjacentElement("beforebegin", div);
 }
  
-//colocar css a addNameUserEstatic
