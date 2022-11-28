@@ -9,6 +9,7 @@
  --win: #14e61b;
  --fondo: #0e0e1c;
  --user: #787a7d;
+ --user2: #0954c6; 
 }
 
 #container-input-user {
@@ -36,48 +37,33 @@
 }
 
 #container-input-user > p {
-  /* font-size: 100em; */
   color: yellow;
 }
 
 #container-userEstatic {
   position: relative;
-  /* border: 1px solid blue; */
   bottom: 200px;
   height: 50px;
-  /* display: flex; */
 }
 
 #container-userEstatic > p {
-  font-size: 2.5em;
-  color: var(--user);
+  font-size: 3em;
+  /* color: var(--user); */
+  color: #0954c6;
 }
 
 /* comienza mq */
 @media (max-width: 1024px) {
-  body {
-    /* background: red; */
-  }
   #container-input-user {
     bottom: 300px;
     left: 10px;
-  }
-  #container-userEstatic > p {
-    /* font-size: 3em; */
-  }
-  #container-userEstatic {
-    /* left: 0px; */
-    /* bottom: 800px; */
   }
   
 }
 
 @media (max-width: 768px) {
-  body {
-    /* background: yellow; */
-  }
   #container-input-user {
-    bottom: 250px;
+    bottom: 200px;
     left: 0px;
   }
   #container-userEstatic > p {
@@ -90,9 +76,6 @@
 }
 
 @media (max-width: 480px) {
-  body {
-    /* background: white; */
-  }
   #container-input-user {
     bottom: 250px;
     left: 0px;
@@ -110,17 +93,9 @@
 }
 
 @media (max-width: 360px) {
-  body {
-    /* background: blue; */
-  }
   #container-input-user {
     bottom: 200px;
     left: 0px;
-  }
-  #container-userEstatic > p {
-    /* font-size: 2em;
-    bottom: 10px;
-    right: 250px; */
   }
   #container-userEstatic {
     font-size: 0.8em;
@@ -130,11 +105,9 @@
 }
 
 @media (max-width: 320px) {
-  body {
-    /* background: blue; */
-  }
   #container-input-user {
     left: 0px;
+    bottom: 150px;
   }
   #container-userEstatic {
     left: 0px;

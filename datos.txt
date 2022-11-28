@@ -1,1 +1,8 @@
-rectificar el tema responsive
+*revisar siempre el tema responsive desing
+
+-add niveles
+-bloquear el botón play para no poder reinicar cuando se juega
+(solo reiniciar cuando se pierde)
+-volver a nivel cero si se pierde
+-cuando se pierde mostrar en un cuadro su mejor avance y tiempo de duración, ranking 
+de los users que hubo antes de actualizar(se pierde los datos- tocar aprender backend)

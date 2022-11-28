@@ -16,12 +16,14 @@ h1 {
   color: rgb(20, 230, 27);
   font-size: 50px;
   padding: 10px;
+  
 }
- body {
+
+body {
   background-color: rgb(14, 14, 28);
   color: white;
   /* text-align: center; */
- }  
+}  
 
  p {
   font-size: 30px;
@@ -30,7 +32,7 @@ h1 {
 .red {
   color: red;
 }
- 
+
 #word {
   text-align: center;
 }
@@ -66,8 +68,9 @@ h1 {
   padding: 0 0.5em;
   font-size: 2rem;
   margin-right: 1em; 
-  border-bottom: 5px solid yellow;
+  border-bottom: 3px solid yellow;
   color: white;
+  position: relative;
 }
 
 .border-boton span:last-child {
@@ -77,13 +80,12 @@ h1 {
 .contenPError {
   display: flex;
   justify-content: center; 
-  /* position: relative; */
 }
 
 .contenPError > p {
-  font-size: 2.5em;
+  font-size: 2em;
   color: red;
-  /* padding-bottom: 30px; */
+  padding: 0 0.5em;
   position: relative;
   bottom: 35px;
 }
@@ -93,7 +95,45 @@ h1 {
   font-size: 5em;
   /* margin-bottom: 30px; */
   display: inline-block;
+  transition: transform 1s ease-in-out 0s;
 }
+/* .container-son > .h2good:hover {
+ 
+  transform: rotate(5deg);
+} */
+
+.container-son > .h2good-animation {
+  color: rgb(9, 239, 9);
+  font-size: 5em;
+  display: inline-block;
+  animation: mianimacion 2s ease-in-out 2s infinite normal none;
+}
+
+
+@keyframes mianimacion {
+  0% {
+  color: var(--win);
+}
+  25% {
+  color: var(--win);
+  }
+  50% {
+  color: var(--win);
+  }
+  75% {
+  color: rgb(226, 140, 27);
+  }
+  80% {
+  color: rgb(226, 140, 27);
+  }
+  85% {
+  color: red;
+  }
+  100% {
+  color: red;
+  }
+}
+
 .container-son > .h2bad {
   display: inline-block;
   color: red;
@@ -124,14 +164,59 @@ h1 {
 }
 
 .border-boton > .teclaYaIncluidaAviso {
-  color: var(--win);
-  font-size: 2.5em;
+  /* color: var(--win); */
+  color: white;
+  /* font-size: 2em; */
+  animation: avisoteclaYaIncluida 0.5s ease-in-out 0s normal none;
 }
 
-@media (max-width: 480px) {
-  body {
-    /* background: white; */
+@keyframes avisoteclaYaIncluida {
+  0% {
+  color: var(--win);
+  font-size: 2.2em;
+}
+50% {
+  color: var(--win);
+  font-size: 2.5em;
   }
+75% {
+  color: var(--win);
+  font-size: 2.2em;
+  }
+100% {
+  font-size: 2em;
+  color: white;
+  }
+}
+
+.contenPError > .teclaYaIncluidaAvisoError {
+  color: var(--bad);
+  font-size: 2em;
+  animation: avisoError 0.5s ease-in-out 0s normal none;
+}
+
+@keyframes avisoError {
+  0% {
+  color: rgb(137, 46, 125);
+  font-size: 2.5em;
+}
+50% {
+  color: rgb(174, 4, 212);
+  font-size: 3em;
+  }
+75% {
+  color: rgb(137, 46, 125);
+  font-size: 2.5em;
+  }
+100% {
+  color: rgb(223, 21, 21);
+  font-size: 2em;
+  }
+}
+
+
+
+@media (max-width: 480px) {
   .container-son > .h2good {
     font-size: 4em;
   }
@@ -139,20 +224,18 @@ h1 {
     font-size: 4em;
   }
   .border-boton span {
-    /* padding: 0 0.5em; */
-    font-size: 1.5rem;
-    margin-right: 1em; 
-    border-bottom: 5px solid yellow;
-    color: white;
+    font-size: 1rem;
   }
- 
+  .container-son > .h2good-animation {
+    font-size: 4em;
+  }
 }
 @media (max-width: 360px) {
   .container-son > .h2good {
     font-size: 3em;
   }
   .border-boton span {
-   font-size: 1.2em;
+   font-size: 1em;
   }
   .container-son > .h2bad {
     font-size: 3em;
@@ -163,12 +246,12 @@ h1 {
   #gameOver > h2 {
     font-size: 3em;
   }  
+  .container-son > .h2good-animation {
+    font-size: 3em;
+  }
 }
 
 @media (max-width: 320px) {
-  body {
-    /* background: blue; */
-  }
   .container-son > .h2good {
     font-size: 3em;
   }
