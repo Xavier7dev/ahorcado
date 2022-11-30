@@ -2,18 +2,21 @@ import variable from "./variables.mjs"
 import {
   borderButton,
   crearElemento,
-  keyChar
+  inputKeyboardAction
 } from "./crearElemento.mjs";
 
-document.addEventListener("DOMContentLoaded", () => {
+ document.addEventListener("DOMContentLoaded", () => {
   crearElemento();
   
-  const {elementBtn} = variable;
-  elementBtn.addEventListener("click", borderButton())
+  const {elementBtn, inputKeyboard} = variable;
+  elementBtn.addEventListener("click", () =>{
+     borderButton()
+  })
 
-  document.addEventListener("keypress", (e) => {
-    keyChar(e)
+  inputKeyboard.addEventListener("keypress", (e) => {
+    if (variable.elementSpan) {
+      inputKeyboardAction(e)
+    }
   });
- 
 })
 

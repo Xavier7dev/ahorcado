@@ -8,7 +8,16 @@
   --bad: #ff0000; 
   --win: #14e61b;
   --fondo: #0e0e1c;
-  --user: #787a7d;
+  --user: #1f1f37a3;
+  --blanco: #fff;
+ }
+
+:root {
+  --bad: #ff0000; 
+  --win: #14e61b;
+  --fondo: #0e0e1c;
+  --user: #1f1f37a3;
+  --blanco: #fff;
  }
 
 body {
@@ -20,28 +29,25 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   margin: auto;
-  height: 400px;
-  margin-top: 20vh;
-}
-.ref {
-  flex: 1;
-  display: flex;
-  align-items: center;
+  height: 100vh;
+  border: 1px solid blue; 
 }
 
 .ref button {
   border: none;
   background: 0;
-
+  
   display: block;
-  padding: 1em 0;
+  padding: 1em 0;  
   width: 180px;
   background-color: yellow;
   border-radius: 1em;
   margin: auto;
   font-size: 1.5em;
+  cursor: pointer;
+  margin-bottom: 3em;
 }
 
 .border-boton span {
@@ -49,7 +55,7 @@ body {
   font-size: 2rem;
   margin-right: 1em; 
   border-bottom: 3px solid yellow;
-  color: white;
+  color: var(--blanco);
 }
 
 
@@ -58,3 +64,26 @@ body {
 }
 
 
+.inputKeyboard {
+  border: 0;
+  background: none;
+
+  display: block;
+  width: 160px;
+  padding: .3em;
+  font-size: 2.5rem;
+  margin: 50px;
+  border-radius: 10px;
+  background: var(--user);
+  text-align: center;
+  color: var(--blanco);
+}
+
+.inputKeyboard:focus {
+  outline: none;
+}
+
+::placeholder {
+  font-size: .5em;
+  color: var(--blanco);
+}

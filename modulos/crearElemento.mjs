@@ -1,10 +1,11 @@
 import variable from "./variables.mjs"
 
 export function crearElemento() {
-  const {ref} = variable;
+  const {ref, random, country} = variable;
 
   const div = document.createElement("div");
   const button = document.createElement("button")
+  const nameCountry = country[random]
   button.textContent = "Play";
   div.id = "contentBtn"
   
@@ -14,15 +15,16 @@ export function crearElemento() {
   variable.elementDivBtn = document.querySelector("#contentBtn");
   variable.elementBtn = document.querySelector("#contentBtn > button")
   variable.container = document.querySelector(".container")
-  variable.elementosh2 = [...document.querySelectorAll(".container-son > h2")]
-
+  variable.inputKeyboard = document.querySelector(".container > input")
+  variable.nameCountry = nameCountry;
+  console.log(nameCountry);
+  
 }
 
 export function borderButton() {
-  const {country ,random, ref} = variable;
+  const {nameCountry, ref} = variable;
   const div = document.createElement("div");
   div.classList.add("border-boton")
-  const nameCountry = country[random]
 
   for (let i = 0; i < nameCountry.length; i++) {
     const span = document.createElement("span");
@@ -34,21 +36,25 @@ export function borderButton() {
     }
   }
 
-  variable.nameCountry = nameCountry;
   variable.elementSpan = [...document.querySelectorAll(".border-boton > span")]
-
 }
 
-export function keyChar(e) {
-  const {elementSpan, nameCountry} = variable;
+// export function keyChar(e) {
+//   const {elementSpan, nameCountry} = variable;
 
-  if (nameCountry.includes(e.key.toUpperCase())) {
-    console.log(nameCountry, e.key);
-    
-    for (let i = 0; i < nameCountry.length; i++) {
-      if (nameCountry[i] === e.key.toUpperCase()) {
-        elementSpan[i].textContent = e.key.toUpperCase()
+// }
+
+export function inputKeyboardAction(e) {
+  const {nameCountry, elementSpan, inputKeyboard} = variable;
+
+    if (nameCountry.includes(e.key.toUpperCase())) {
+      for (let i = 0; i < nameCountry.length; i++) {
+        if (nameCountry[i] === e.key.toUpperCase()) {
+          elementSpan[i].textContent = e.key.toUpperCase()
+        }
+        inputKeyboard.value = e.key;
       }
     }
+    setTimeout(() =>{ (e.key) ? inputKeyboard.value = "" : null }, 1000); 
   }
-}
+  
