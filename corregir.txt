@@ -1,7 +1,0 @@
-//colocandpo el evento keypress en su lugar en proceso 28/11/22
-*solucionar el tema de los enters
-
-*solcuionar el tema responsive desing
-*corregir user random llega un número que no existe, queda undefined
-*solucionar el tema cuando se pone un nombre de usuario se da enter debe entrar el juego.
-*solucionar el tema de dar enter al inicio y entrar al juegos sin poner name user
